@@ -1,0 +1,8 @@
+# Chặn thư mục môi trường ảo
+venv/
+.venv/
+env/
+
+# Chặn các tệp rác tự sinh của Python
+__pycache__/
+*.py[cod]

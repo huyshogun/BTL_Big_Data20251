@@ -1,0 +1,219 @@
+version: '3'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0  # Đã ghim version
+    container_name: zookeeper1
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - es-net
+
+  kafka1:
+    image: confluentinc/cp-kafka:7.4.0      # Đã ghim version
+    container_name: kafka1
+    depends_on:
+      - zookeeper
+    ports:
+      - "9097:9097"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181 # Sửa thành tên service
+      # Cấu hình listener chuẩn cho Confluent
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka1:29092,PLAINTEXT_HOST://localhost:9097
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+    networks:
+      - es-net
+
+  kafka2:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: kafka2
+    depends_on:
+      - zookeeper
+    ports:
+      - "9098:9098"
+    environment:
+      KAFKA_BROKER_ID: 2
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      # Lưu ý port localhost mapping phải khớp với ports bên trên (9098)
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka2:29093,PLAINTEXT_HOST://localhost:9098
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+    networks:
+      - es-net
+
+  kafka3:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: kafka3
+    depends_on:
+      - zookeeper
+    ports:
+      - "9099:9099"
+    environment:
+      KAFKA_BROKER_ID: 3
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      # Lưu ý port localhost mapping phải khớp với ports bên trên (9099)
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka3:29094,PLAINTEXT_HOST://localhost:9099
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+    networks:
+      - es-net
+
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: namenode
+    hostname: namenode
+    ports:
+      - 9870:9870
+    environment:
+      - CLUSTER_NAME=stock
+    env_file:
+      - ./hadoop/hadoop.env
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - ../storage/hadoop/namenode:/hadoop/dfs/name
+    networks:
+      - es-net
+
+  datanode-1:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode-1
+    hostname: localhost
+    ports:
+      - 9864:9864
+    environment:
+      - SERVICE_PRECONDITION=namenode:9870
+    env_file:
+      - ./hadoop/hadoop.env
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
+    volumes:
+    - ../storage/hadoop/datanode-1:/hadoop/dfs/data
+    networks:
+      - es-net
+
+  datanode-2:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode-2
+    hostname: localhost
+    ports:
+      - 19864:9864
+    environment:
+      - SERVICE_PRECONDITION=namenode:9870
+    env_file:
+      - ./hadoop/hadoop.env
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
+    volumes:
+    - ../storage/hadoop/datanode-2:/hadoop/dfs/data
+    networks:
+      - es-net
+
+  datanode-3:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode-3
+    hostname: localhost
+    ports:
+      - 29864:9864
+    environment:
+      - SERVICE_PRECONDITION=namenode:9870
+    env_file:
+      - ./hadoop/hadoop.env
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
+    volumes:
+    - ../storage/hadoop/datanode-3:/hadoop/dfs/data
+    networks:
+      - es-net
+
+  cassandra:
+    image: cassandra:4.0.5
+    container_name: cassandra
+    hostname: cassandra
+    env_file:
+      - ./cassandra/cassandra.env
+    ports:
+      - 9042:9042
+    volumes:
+      - ../storage/cassandra:/var/lib/cassandra
+    networks:
+      - es-net
+
+
+  spark-master:
+    image: bde2020/spark-master:3.0.0-hadoop3.2
+    container_name: spark-master
+    depends_on:
+      - namenode
+      - datanode-1
+      - datanode-2
+      - datanode-3
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    environment:
+      - INIT_DAEMON_STEP=setup_spark
+      - CORE_CONF_fs_defaultFS=hdfs://localhost:9000
+      - SPARK_SUBMIT_OPTS=-Dorg.springframework.boot.loader.JarLauncher
+      - SPARK_OPTS=--packages com.datastax.spark:spark-cassandra-connector_2.12:3.0.0
+    networks:
+      - es-net
+
+      
+  spark-worker:
+    image: bde2020/spark-worker:3.0.0-hadoop3.2
+    container_name: spark-worker
+    mem_limit: 256m
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"
+    environment:
+      - "SPARK_MASTER=spark://localhost:7077"
+      - CORE_CONF_fs_defaultFS=hdfs://localhost:9000
+    networks:
+      - es-net
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.1
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false  
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+    networks:
+      - es-net
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.15.1
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - es-net
+
+networks:
+  es-net  :
+    driver: bridge

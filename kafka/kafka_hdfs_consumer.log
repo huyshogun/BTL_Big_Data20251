@@ -1,0 +1,134 @@
+2026-01-12 19:25:31,267 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=localhost:9098 <connecting> [IPv6 ('::1', 9098, 0, 0)]>: connecting to localhost:9098 [('::1', 9098, 0, 0) IPv6]
+2026-01-12 19:25:31,493 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=localhost:9098 <checking_api_versions_recv> [IPv6 ('::1', 9098, 0, 0)]>: Broker version identified as 2.6
+2026-01-12 19:25:31,494 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=localhost:9098 <connected> [IPv6 ('::1', 9098, 0, 0)]>: Connection complete.
+2026-01-12 19:25:31,496 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('example_topic',)
+2026-01-12 19:25:31,497 - hdfs.client - INFO - Instantiated <InsecureClient(url='http://localhost:9870')>.
+2026-01-12 19:25:31,571 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=3 host=localhost:9099 <connecting> [IPv6 ('::1', 9099, 0, 0)]>: connecting to localhost:9099 [('::1', 9099, 0, 0) IPv6]
+2026-01-12 19:25:31,573 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=3 host=localhost:9099 <connected> [IPv6 ('::1', 9099, 0, 0)]>: Connection complete.
+2026-01-12 19:25:31,575 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=localhost:9098 <connected> [IPv6 ('::1', 9098, 0, 0)]>: Closing connection. 
+2026-01-12 19:25:31,758 - kafka.cluster - INFO - Coordinator for group/hdfs_archiver_group is BrokerMetadata(nodeId='coordinator-1', host='localhost', port=9097, rack=None)
+2026-01-12 19:25:31,758 - kafka.coordinator - INFO - Discovered coordinator coordinator-1 for group hdfs_archiver_group
+2026-01-12 19:25:31,761 - kafka.coordinator.heartbeat - INFO - Starting new heartbeat thread
+2026-01-12 19:25:31,763 - kafka.coordinator.consumer - INFO - Revoking previously assigned partitions set() for group hdfs_archiver_group
+2026-01-12 19:25:31,764 - kafka.coordinator - INFO - Failed to join group hdfs_archiver_group: NodeNotReadyError: coordinator-1
+2026-01-12 19:25:31,766 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=localhost:9097 <connecting> [IPv6 ('::1', 9097, 0, 0)]>: connecting to localhost:9097 [('::1', 9097, 0, 0) IPv6]
+2026-01-12 19:25:31,768 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=localhost:9097 <connected> [IPv6 ('::1', 9097, 0, 0)]>: Connection complete.
+2026-01-12 19:25:31,885 - kafka.coordinator - INFO - (Re-)joining group hdfs_archiver_group
+2026-01-12 19:25:33,161 - kafka.coordinator - INFO - Received member id kafka-python-2.3.0-245fd4eb-b07e-4a9c-8a9a-2d690f350eff for group hdfs_archiver_group; will retry join-group
+2026-01-12 19:25:33,162 - kafka.coordinator - INFO - Failed to join group hdfs_archiver_group: [Error 79] MemberIdRequiredError
+2026-01-12 19:25:33,164 - kafka.coordinator - INFO - (Re-)joining group hdfs_archiver_group
+2026-01-12 19:25:36,710 - kafka.coordinator - INFO - Successfully joined group hdfs_archiver_group <Generation 1 (member_id: kafka-python-2.3.0-245fd4eb-b07e-4a9c-8a9a-2d690f350eff, protocol: range)>
+2026-01-12 19:25:36,710 - kafka.coordinator - INFO - Elected group leader -- performing partition assignments using range
+2026-01-12 19:25:37,375 - kafka.consumer.subscription_state - INFO - Updated partition assignment: [TopicPartition(topic='example_topic', partition=0)]
+2026-01-12 19:25:37,378 - kafka.coordinator.consumer - INFO - Setting newly assigned partitions {TopicPartition(topic='example_topic', partition=0)} for group hdfs_archiver_group
+2026-01-12 19:25:37,449 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=2 host=localhost:9098 <connecting> [IPv6 ('::1', 9098, 0, 0)]>: connecting to localhost:9098 [('::1', 9098, 0, 0) IPv6]
+2026-01-12 19:25:37,450 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=2 host=localhost:9098 <connected> [IPv6 ('::1', 9098, 0, 0)]>: Connection complete.
+2026-01-12 19:25:37,505 - kafka.consumer.fetcher - INFO - Resetting offset for partition TopicPartition(topic='example_topic', partition=0) to offset 0.
+2026-01-12 19:25:38,285 - __main__ - INFO - Trigger write: 500 msgs (Timeout: False, Full: True)
+2026-01-12 19:25:38,291 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:25:38,551 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_25_38_500.json'.
+2026-01-12 19:25:48,166 - __main__ - INFO - Trigger write: 290 msgs (Timeout: False, Full: True)
+2026-01-12 19:25:48,175 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:25:48,215 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_25_48_290.json'.
+2026-01-12 19:25:56,301 - __main__ - INFO - Trigger write: 500 msgs (Timeout: False, Full: True)
+2026-01-12 19:25:56,307 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:25:56,321 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_25_56_500.json'.
+2026-01-12 19:26:06,960 - __main__ - INFO - Trigger write: 289 msgs (Timeout: False, Full: True)
+2026-01-12 19:26:06,968 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:26:06,996 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_26_06_289.json'.
+2026-01-12 19:26:17,441 - __main__ - INFO - Trigger write: 500 msgs (Timeout: False, Full: True)
+2026-01-12 19:26:17,461 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:26:17,502 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_26_17_500.json'.
+2026-01-12 19:26:35,925 - __main__ - INFO - Trigger write: 289 msgs (Timeout: False, Full: True)
+2026-01-12 19:26:35,939 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:26:36,022 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_26_35_289.json'.
+2026-01-12 19:26:46,384 - __main__ - INFO - Trigger write: 500 msgs (Timeout: False, Full: True)
+2026-01-12 19:26:46,399 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:26:46,426 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_26_46_500.json'.
+2026-01-12 19:26:59,068 - __main__ - INFO - Trigger write: 289 msgs (Timeout: False, Full: True)
+2026-01-12 19:26:59,082 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:26:59,124 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_26_59_289.json'.
+2026-01-12 19:27:06,226 - __main__ - INFO - Trigger write: 500 msgs (Timeout: False, Full: True)
+2026-01-12 19:27:06,257 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:27:06,290 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_27_06_500.json'.
+2026-01-12 19:27:20,432 - __main__ - INFO - Trigger write: 289 msgs (Timeout: False, Full: True)
+2026-01-12 19:27:20,464 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:27:20,537 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_27_20_289.json'.
+2026-01-12 19:27:28,944 - __main__ - INFO - Trigger write: 500 msgs (Timeout: False, Full: True)
+2026-01-12 19:27:28,962 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:27:28,993 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_27_28_500.json'.
+2026-01-12 19:27:41,527 - __main__ - INFO - Trigger write: 290 msgs (Timeout: False, Full: True)
+2026-01-12 19:27:41,547 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:27:41,634 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_27_41_290.json'.
+2026-01-12 19:27:51,284 - __main__ - INFO - Trigger write: 439 msgs (Timeout: False, Full: True)
+2026-01-12 19:27:51,288 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:27:51,299 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_27_51_439.json'.
+2026-01-12 19:27:58,530 - __main__ - INFO - Consumer stopped by user.
+2026-01-12 19:28:00,539 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:28:00,554 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_28_00_439.json'.
+2026-01-12 19:29:17,029 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-1 host=localhost:9098 <connecting> [IPv6 ('::1', 9098, 0, 0)]>: connecting to localhost:9098 [('::1', 9098, 0, 0) IPv6]
+2026-01-12 19:29:17,045 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-1 host=localhost:9098 <checking_api_versions_recv> [IPv6 ('::1', 9098, 0, 0)]>: Broker version identified as 2.6
+2026-01-12 19:29:17,046 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-1 host=localhost:9098 <connected> [IPv6 ('::1', 9098, 0, 0)]>: Connection complete.
+2026-01-12 19:29:17,050 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('example_topic',)
+2026-01-12 19:29:17,050 - hdfs.client - INFO - Instantiated <InsecureClient(url='http://localhost:9870')>.
+2026-01-12 19:29:17,056 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=2 host=localhost:9098 <connecting> [IPv6 ('::1', 9098, 0, 0)]>: connecting to localhost:9098 [('::1', 9098, 0, 0) IPv6]
+2026-01-12 19:29:17,059 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=2 host=localhost:9098 <connected> [IPv6 ('::1', 9098, 0, 0)]>: Connection complete.
+2026-01-12 19:29:17,060 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-1 host=localhost:9098 <connected> [IPv6 ('::1', 9098, 0, 0)]>: Closing connection. 
+2026-01-12 19:29:17,168 - kafka.cluster - INFO - Coordinator for group/hdfs_archiver_group is BrokerMetadata(nodeId='coordinator-1', host='localhost', port=9097, rack=None)
+2026-01-12 19:29:17,168 - kafka.coordinator - INFO - Discovered coordinator coordinator-1 for group hdfs_archiver_group
+2026-01-12 19:29:17,170 - kafka.coordinator.heartbeat - INFO - Starting new heartbeat thread
+2026-01-12 19:29:17,172 - kafka.coordinator.consumer - INFO - Revoking previously assigned partitions set() for group hdfs_archiver_group
+2026-01-12 19:29:17,172 - kafka.coordinator - INFO - Failed to join group hdfs_archiver_group: NodeNotReadyError: coordinator-1
+2026-01-12 19:29:17,174 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=localhost:9097 <connecting> [IPv6 ('::1', 9097, 0, 0)]>: connecting to localhost:9097 [('::1', 9097, 0, 0) IPv6]
+2026-01-12 19:29:17,175 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=localhost:9097 <connected> [IPv6 ('::1', 9097, 0, 0)]>: Connection complete.
+2026-01-12 19:29:17,289 - kafka.coordinator - INFO - (Re-)joining group hdfs_archiver_group
+2026-01-12 19:29:17,298 - kafka.coordinator - INFO - Received member id kafka-python-2.3.0-c134733c-ed92-4f1e-b2e6-712d20d2e5b7 for group hdfs_archiver_group; will retry join-group
+2026-01-12 19:29:17,299 - kafka.coordinator - INFO - Failed to join group hdfs_archiver_group: [Error 79] MemberIdRequiredError
+2026-01-12 19:29:17,300 - kafka.coordinator - INFO - (Re-)joining group hdfs_archiver_group
+2026-01-12 19:29:20,554 - kafka.coordinator - INFO - Successfully joined group hdfs_archiver_group <Generation 3 (member_id: kafka-python-2.3.0-c134733c-ed92-4f1e-b2e6-712d20d2e5b7, protocol: range)>
+2026-01-12 19:29:20,555 - kafka.coordinator - INFO - Elected group leader -- performing partition assignments using range
+2026-01-12 19:29:20,570 - kafka.consumer.subscription_state - INFO - Updated partition assignment: [TopicPartition(topic='example_topic', partition=0)]
+2026-01-12 19:29:20,571 - kafka.coordinator.consumer - INFO - Setting newly assigned partitions {TopicPartition(topic='example_topic', partition=0)} for group hdfs_archiver_group
+2026-01-12 19:29:20,949 - __main__ - INFO - Trigger write: 439 msgs (Timeout: False, Full: True)
+2026-01-12 19:29:20,951 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:29:20,984 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_29_20_439.json'.
+2026-01-12 19:29:25,976 - __main__ - INFO - >>> Đã lưu 439 tin vào HDFS: /data/kafka_messages\2026\01\12\batdongsan_19_29_20_439.json
+2026-01-12 19:34:20,564 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=3 host=localhost:9099 <connecting> [IPv6 ('::1', 9099, 0, 0)]>: connecting to localhost:9099 [('::1', 9099, 0, 0) IPv6]
+2026-01-12 19:34:20,567 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=3 host=localhost:9099 <connected> [IPv6 ('::1', 9099, 0, 0)]>: Connection complete.
+2026-01-12 19:53:42,566 - __main__ - INFO - Trigger write: 31 msgs (Timeout: True, Full: False)
+2026-01-12 19:53:42,567 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:54:12,593 - __main__ - ERROR - Error creating HDFS directory /data/kafka_messages\2026\01\12: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-01-12 19:54:12,595 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_53_42_31.json'.
+2026-01-12 19:54:13,979 - __main__ - INFO - >>> Đã lưu 31 tin vào HDFS: /data/kafka_messages\2026\01\12\batdongsan_19_53_42_31.json
+2026-01-12 19:59:18,543 - __main__ - INFO - Trigger write: 32 msgs (Timeout: True, Full: False)
+2026-01-12 19:59:18,545 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 19:59:18,744 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_19_59_18_32.json'.
+2026-01-12 19:59:20,196 - __main__ - INFO - >>> Đã lưu 32 tin vào HDFS: /data/kafka_messages\2026\01\12\batdongsan_19_59_18_32.json
+2026-01-12 20:04:26,561 - __main__ - INFO - Trigger write: 37 msgs (Timeout: True, Full: False)
+2026-01-12 20:04:26,566 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 20:04:26,616 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_20_04_26_37.json'.
+2026-01-12 20:04:29,743 - __main__ - INFO - >>> Đã lưu 37 tin vào HDFS: /data/kafka_messages\2026\01\12\batdongsan_20_04_26_37.json
+2026-01-12 20:09:31,780 - __main__ - INFO - Trigger write: 41 msgs (Timeout: True, Full: False)
+2026-01-12 20:09:31,788 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 20:09:31,851 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_20_09_31_41.json'.
+2026-01-12 20:09:35,251 - __main__ - INFO - >>> Đã lưu 41 tin vào HDFS: /data/kafka_messages\2026\01\12\batdongsan_20_09_31_41.json
+2026-01-12 20:14:35,716 - __main__ - INFO - Trigger write: 39 msgs (Timeout: True, Full: False)
+2026-01-12 20:14:35,721 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 20:14:35,773 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_20_14_35_39.json'.
+2026-01-12 20:14:36,752 - __main__ - INFO - >>> Đã lưu 39 tin vào HDFS: /data/kafka_messages\2026\01\12\batdongsan_20_14_35_39.json
+2026-01-12 20:19:39,257 - __main__ - INFO - Trigger write: 38 msgs (Timeout: True, Full: False)
+2026-01-12 20:19:39,269 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 20:19:39,390 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_20_19_39_38.json'.
+2026-01-12 20:19:41,601 - __main__ - INFO - >>> Đã lưu 38 tin vào HDFS: /data/kafka_messages\2026\01\12\batdongsan_20_19_39_38.json
+2026-01-12 20:24:42,407 - __main__ - INFO - Trigger write: 41 msgs (Timeout: True, Full: False)
+2026-01-12 20:24:42,416 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 20:24:42,508 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_20_24_42_41.json'.
+2026-01-12 20:24:44,664 - __main__ - INFO - >>> Đã lưu 41 tin vào HDFS: /data/kafka_messages\2026\01\12\batdongsan_20_24_42_41.json
+2026-01-12 20:29:46,386 - __main__ - INFO - Trigger write: 38 msgs (Timeout: True, Full: False)
+2026-01-12 20:29:46,396 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 20:29:46,511 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_20_29_46_38.json'.
+2026-01-12 20:29:49,221 - __main__ - INFO - >>> Đã lưu 38 tin vào HDFS: /data/kafka_messages\2026\01\12\batdongsan_20_29_46_38.json
+2026-01-12 20:34:49,784 - __main__ - INFO - Trigger write: 41 msgs (Timeout: True, Full: False)
+2026-01-12 20:34:49,807 - hdfs.client - INFO - Fetching status for '/data/kafka_messages\\2026\\01\\12'.
+2026-01-12 20:34:50,033 - hdfs.client - INFO - Writing to '/data/kafka_messages\\2026\\01\\12\\batdongsan_20_34_49_41.json'.
+2026-01-12 20:34:54,172 - __main__ - INFO - >>> Đã lưu 41 tin vào HDFS: /data/kafka_messages\2026\01\12\batdongsan_20_34_49_41.json
