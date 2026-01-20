@@ -4130,3 +4130,352 @@ requests.exceptions.ConnectionError: HTTPConnectionPool(host='datanode-1', port=
 2026-01-21 01:56:39,008 - __main__ - INFO - Trigger write: 10 msgs (Timeout: True, Full: True)
 2026-01-21 01:56:39,010 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
 2026-01-21 01:56:39,201 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_01_56_39_10.json'.
+2026-01-21 01:56:46,786 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_01_56_39_10.json
+2026-01-21 01:57:48,849 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 01:57:48,853 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 01:57:48,908 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_01_57_48_8.json'.
+2026-01-21 01:57:50,051 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_01_57_48_8.json
+2026-01-21 01:58:53,945 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 01:58:53,946 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 01:58:54,013 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_01_58_53_9.json'.
+2026-01-21 01:58:56,537 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_01_58_53_9.json
+2026-01-21 02:00:01,651 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:00:01,661 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:00:01,802 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_00_01_8.json'.
+2026-01-21 02:00:07,129 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_00_01_8.json
+2026-01-21 02:01:07,187 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:01:07,187 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:01:07,258 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_01_07_9.json'.
+2026-01-21 02:01:09,485 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_01_07_9.json
+2026-01-21 02:02:09,778 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:02:09,782 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:02:09,902 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_02_09_8.json'.
+2026-01-21 02:02:18,290 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_02_09_8.json
+2026-01-21 02:03:18,535 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:03:18,536 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:03:18,734 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_03_18_9.json'.
+2026-01-21 02:03:20,231 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_03_18_9.json
+2026-01-21 02:04:28,592 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:04:28,596 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:04:28,709 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_04_28_8.json'.
+2026-01-21 02:04:31,971 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_04_28_8.json
+2026-01-21 02:05:32,641 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:05:32,642 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:05:32,812 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_05_32_8.json'.
+2026-01-21 02:05:35,761 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_05_32_8.json
+2026-01-21 02:06:36,148 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:06:36,149 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:06:36,199 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_06_36_8.json'.
+2026-01-21 02:06:37,088 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_06_36_8.json
+2026-01-21 02:07:39,083 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:07:39,084 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:07:39,137 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_07_39_8.json'.
+2026-01-21 02:07:41,108 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_07_39_8.json
+2026-01-21 02:08:41,578 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:08:41,578 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:08:41,706 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_08_41_8.json'.
+2026-01-21 02:08:44,066 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_08_41_8.json
+2026-01-21 02:09:46,366 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:09:46,379 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:09:46,706 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_09_46_9.json'.
+2026-01-21 02:09:50,114 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_09_46_9.json
+2026-01-21 02:10:54,289 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:10:54,289 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:10:54,499 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_10_54_8.json'.
+2026-01-21 02:10:59,189 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_10_54_8.json
+2026-01-21 02:12:05,214 - __main__ - INFO - Trigger write: 7 msgs (Timeout: True, Full: False)
+2026-01-21 02:12:05,217 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:12:05,338 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_12_05_7.json'.
+2026-01-21 02:12:13,159 - __main__ - INFO - 💾 Đã lưu 7 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_12_05_7.json
+2026-01-21 02:13:12,665 - __main__ - INFO - Trigger write: 10 msgs (Timeout: False, Full: True)
+2026-01-21 02:13:12,666 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:13:12,784 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_13_12_10.json'.
+2026-01-21 02:13:15,070 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_13_12_10.json
+2026-01-21 02:14:22,368 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:14:22,372 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:14:22,455 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_14_22_8.json'.
+2026-01-21 02:14:30,108 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_14_22_8.json
+2026-01-21 02:15:30,774 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:15:30,774 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:15:30,834 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_15_30_9.json'.
+2026-01-21 02:15:33,386 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_15_30_9.json
+2026-01-21 02:16:34,106 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:16:34,108 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:16:34,195 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_16_34_9.json'.
+2026-01-21 02:16:36,967 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_16_34_9.json
+2026-01-21 02:17:33,483 - __main__ - INFO - Trigger write: 10 msgs (Timeout: False, Full: True)
+2026-01-21 02:17:33,484 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:17:33,789 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_17_33_10.json'.
+2026-01-21 02:17:41,646 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_17_33_10.json
+2026-01-21 02:18:25,027 - kafka.client - INFO - Closing idle connection 3, last active 540001 ms ago
+2026-01-21 02:18:25,029 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=3 host=localhost:9099 <connected> [IPv6 ('::1', 9099, 0, 0)]>: Closing connection. 
+2026-01-21 02:18:38,088 - __main__ - INFO - Trigger write: 10 msgs (Timeout: False, Full: True)
+2026-01-21 02:18:38,088 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:18:38,203 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_18_38_10.json'.
+2026-01-21 02:18:48,427 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_18_38_10.json
+2026-01-21 02:19:29,821 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=3 host=localhost:9099 <connecting> [IPv6 ('::1', 9099, 0, 0)]>: connecting to localhost:9099 [('::1', 9099, 0, 0) IPv6]
+2026-01-21 02:19:29,830 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=3 host=localhost:9099 <connected> [IPv6 ('::1', 9099, 0, 0)]>: Connection complete.
+2026-01-21 02:19:48,722 - __main__ - INFO - Trigger write: 7 msgs (Timeout: True, Full: False)
+2026-01-21 02:19:48,722 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:19:48,809 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_19_48_7.json'.
+2026-01-21 02:19:57,196 - __main__ - INFO - 💾 Đã lưu 7 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_19_48_7.json
+2026-01-21 02:20:58,098 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:20:58,100 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:20:58,193 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_20_58_9.json'.
+2026-01-21 02:21:06,540 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_20_58_9.json
+2026-01-21 02:22:07,519 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:22:07,520 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:22:07,726 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_22_07_9.json'.
+2026-01-21 02:22:13,292 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_22_07_9.json
+2026-01-21 02:23:13,934 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:23:13,940 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:23:14,017 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_23_13_9.json'.
+2026-01-21 02:23:18,956 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_23_13_9.json
+2026-01-21 02:24:19,558 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:24:19,561 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:24:19,685 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_24_19_9.json'.
+2026-01-21 02:24:27,066 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_24_19_9.json
+2026-01-21 02:25:27,134 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:25:27,135 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:25:27,222 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_25_27_9.json'.
+2026-01-21 02:25:31,020 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_25_27_9.json
+2026-01-21 02:26:31,725 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:26:31,725 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:26:31,786 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_26_31_9.json'.
+2026-01-21 02:26:38,074 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_26_31_9.json
+2026-01-21 02:27:38,393 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:27:38,394 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:27:38,474 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_27_38_9.json'.
+2026-01-21 02:27:41,357 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_27_38_9.json
+2026-01-21 02:28:35,056 - __main__ - INFO - Trigger write: 10 msgs (Timeout: False, Full: True)
+2026-01-21 02:28:35,057 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:28:35,171 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_28_35_10.json'.
+2026-01-21 02:28:38,090 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_28_35_10.json
+2026-01-21 02:29:39,520 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:29:39,520 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:29:39,652 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_29_39_8.json'.
+2026-01-21 02:29:46,551 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_29_39_8.json
+2026-01-21 02:30:47,537 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:30:47,547 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:30:47,615 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_30_47_9.json'.
+2026-01-21 02:30:51,710 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_30_47_9.json
+2026-01-21 02:31:52,300 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:31:52,300 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:31:52,464 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_31_52_9.json'.
+2026-01-21 02:31:55,358 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_31_52_9.json
+2026-01-21 02:32:57,768 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:32:57,771 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:32:57,884 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_32_57_9.json'.
+2026-01-21 02:33:01,260 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_32_57_9.json
+2026-01-21 02:34:03,852 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:34:03,856 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:34:04,015 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_34_03_8.json'.
+2026-01-21 02:34:07,086 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_34_03_8.json
+2026-01-21 02:35:07,460 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:35:07,461 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:35:07,534 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_35_07_8.json'.
+2026-01-21 02:35:09,974 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_35_07_8.json
+2026-01-21 02:36:10,890 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:36:10,890 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:36:10,949 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_36_10_8.json'.
+2026-01-21 02:36:13,450 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_36_10_8.json
+2026-01-21 02:37:16,574 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:37:16,574 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:37:16,784 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_37_16_9.json'.
+2026-01-21 02:37:22,284 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_37_16_9.json
+2026-01-21 02:38:22,527 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:38:22,527 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:38:22,602 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_38_22_9.json'.
+2026-01-21 02:38:25,043 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_38_22_9.json
+2026-01-21 02:39:29,424 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:39:29,425 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:39:29,594 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_39_29_8.json'.
+2026-01-21 02:39:31,700 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_39_29_8.json
+2026-01-21 02:40:32,064 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:40:32,064 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:40:32,195 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_40_32_9.json'.
+2026-01-21 02:40:37,342 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_40_32_9.json
+2026-01-21 02:41:38,043 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:41:38,043 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:41:38,166 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_41_38_8.json'.
+2026-01-21 02:41:41,534 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_41_38_8.json
+2026-01-21 02:42:41,865 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:42:41,866 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:42:42,123 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_42_41_9.json'.
+2026-01-21 02:42:46,373 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_42_41_9.json
+2026-01-21 02:43:29,995 - kafka.client - INFO - Closing idle connection 3, last active 540013 ms ago
+2026-01-21 02:43:29,996 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=3 host=localhost:9099 <connected> [IPv6 ('::1', 9099, 0, 0)]>: Closing connection. 
+2026-01-21 02:43:47,124 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:43:47,129 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:43:47,257 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_43_47_9.json'.
+2026-01-21 02:44:06,526 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_43_47_9.json
+2026-01-21 02:44:31,736 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=localhost:9097 <connecting> [IPv6 ('::1', 9097, 0, 0)]>: connecting to localhost:9097 [('::1', 9097, 0, 0) IPv6]
+2026-01-21 02:44:31,736 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=localhost:9097 <connected> [IPv6 ('::1', 9097, 0, 0)]>: Connection complete.
+2026-01-21 02:44:53,983 - __main__ - INFO - Trigger write: 10 msgs (Timeout: False, Full: True)
+2026-01-21 02:44:53,983 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:44:54,222 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_44_53_10.json'.
+2026-01-21 02:45:00,456 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_44_53_10.json
+2026-01-21 02:46:00,775 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:46:00,778 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:46:00,861 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_46_00_9.json'.
+2026-01-21 02:46:06,144 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_46_00_9.json
+2026-01-21 02:47:06,631 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:47:06,638 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:47:06,726 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_47_06_9.json'.
+2026-01-21 02:47:15,394 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_47_06_9.json
+2026-01-21 02:48:15,982 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:48:15,984 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:48:16,038 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_48_15_9.json'.
+2026-01-21 02:48:21,306 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_48_15_9.json
+2026-01-21 02:49:22,712 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:49:22,713 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:49:22,782 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_49_22_9.json'.
+2026-01-21 02:49:29,047 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_49_22_9.json
+2026-01-21 02:50:29,773 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:50:29,787 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:50:29,977 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_50_29_9.json'.
+2026-01-21 02:50:36,710 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_50_29_9.json
+2026-01-21 02:51:36,930 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:51:36,933 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:51:37,081 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_51_36_8.json'.
+2026-01-21 02:51:43,861 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_51_36_8.json
+2026-01-21 02:52:38,262 - __main__ - INFO - Trigger write: 10 msgs (Timeout: False, Full: True)
+2026-01-21 02:52:38,264 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:52:38,373 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_52_38_10.json'.
+2026-01-21 02:52:44,537 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_52_38_10.json
+2026-01-21 02:53:46,883 - __main__ - INFO - Trigger write: 7 msgs (Timeout: True, Full: False)
+2026-01-21 02:53:46,885 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:53:47,190 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_53_46_7.json'.
+2026-01-21 02:53:55,058 - __main__ - INFO - 💾 Đã lưu 7 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_53_46_7.json
+2026-01-21 02:54:56,116 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:54:56,117 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:54:56,197 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_54_56_9.json'.
+2026-01-21 02:55:00,345 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_54_56_9.json
+2026-01-21 02:56:01,279 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:56:01,280 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:56:01,390 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_56_01_9.json'.
+2026-01-21 02:56:03,859 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_56_01_9.json
+2026-01-21 02:57:05,018 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 02:57:05,021 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:57:05,712 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_57_05_9.json'.
+2026-01-21 02:57:09,862 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_57_05_9.json
+2026-01-21 02:58:10,047 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:58:10,049 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:58:10,235 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_58_10_8.json'.
+2026-01-21 02:58:17,091 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_58_10_8.json
+2026-01-21 02:59:17,528 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 02:59:17,529 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 02:59:17,818 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_02_59_17_8.json'.
+2026-01-21 02:59:22,727 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_02_59_17_8.json
+2026-01-21 03:00:23,256 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:00:23,256 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:00:23,380 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_00_23_9.json'.
+2026-01-21 03:00:26,401 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_00_23_9.json
+2026-01-21 03:01:31,356 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:01:31,357 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:01:31,651 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_01_31_9.json'.
+2026-01-21 03:01:38,146 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_01_31_9.json
+2026-01-21 03:02:38,277 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:02:38,282 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:02:38,404 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_02_38_9.json'.
+2026-01-21 03:02:41,616 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_02_38_9.json
+2026-01-21 03:03:42,598 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 03:03:42,604 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:03:42,670 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_03_42_8.json'.
+2026-01-21 03:03:48,072 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_03_42_8.json
+2026-01-21 03:04:48,739 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 03:04:48,739 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:04:49,079 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_04_48_8.json'.
+2026-01-21 03:04:52,517 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_04_48_8.json
+2026-01-21 03:05:52,887 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:05:52,896 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:05:53,144 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_05_52_9.json'.
+2026-01-21 03:05:59,405 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_05_52_9.json
+2026-01-21 03:06:59,783 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:06:59,783 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:06:59,844 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_06_59_9.json'.
+2026-01-21 03:07:04,696 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_06_59_9.json
+2026-01-21 03:08:05,520 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 03:08:05,524 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:08:05,626 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_08_05_8.json'.
+2026-01-21 03:08:08,634 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_08_05_8.json
+2026-01-21 03:09:09,128 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 03:09:09,136 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:09:09,273 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_09_09_8.json'.
+2026-01-21 03:09:12,999 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_09_09_8.json
+2026-01-21 03:10:13,855 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:10:13,856 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:10:14,054 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_10_13_9.json'.
+2026-01-21 03:10:23,370 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_10_13_9.json
+2026-01-21 03:11:24,397 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 03:11:24,404 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:11:24,521 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_11_24_8.json'.
+2026-01-21 03:11:27,921 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_11_24_8.json
+2026-01-21 03:12:28,955 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:12:28,957 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:12:29,116 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_12_28_9.json'.
+2026-01-21 03:12:30,747 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_12_28_9.json
+2026-01-21 03:13:35,392 - __main__ - INFO - Trigger write: 7 msgs (Timeout: True, Full: False)
+2026-01-21 03:13:35,396 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:13:35,642 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_13_35_7.json'.
+2026-01-21 03:13:39,199 - __main__ - INFO - 💾 Đã lưu 7 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_13_35_7.json
+2026-01-21 03:14:39,843 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:14:39,844 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:14:40,082 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_14_39_9.json'.
+2026-01-21 03:14:41,757 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_14_39_9.json
+2026-01-21 03:15:43,559 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:15:43,560 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:15:43,636 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_15_43_9.json'.
+2026-01-21 03:15:48,938 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_15_43_9.json
+2026-01-21 03:16:49,802 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:16:49,802 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:16:49,876 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_16_49_9.json'.
+2026-01-21 03:16:57,014 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_16_49_9.json
+2026-01-21 03:17:53,179 - __main__ - INFO - Trigger write: 10 msgs (Timeout: False, Full: True)
+2026-01-21 03:17:53,185 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:17:53,333 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_17_53_10.json'.
+2026-01-21 03:17:56,153 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_17_53_10.json
+2026-01-21 03:18:59,094 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:18:59,095 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:18:59,190 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_18_59_9.json'.
+2026-01-21 03:19:02,767 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_18_59_9.json
+2026-01-21 03:20:05,675 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:20:05,678 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:20:05,732 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_20_05_9.json'.
+2026-01-21 03:20:07,638 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_20_05_9.json
+2026-01-21 03:21:07,918 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 03:21:07,918 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:21:08,029 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_21_07_8.json'.
+2026-01-21 03:21:16,694 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_21_07_8.json
+2026-01-21 03:22:16,453 - __main__ - INFO - Trigger write: 10 msgs (Timeout: False, Full: True)
+2026-01-21 03:22:16,454 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:22:16,551 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_22_16_10.json'.
+2026-01-21 03:22:19,863 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_22_16_10.json
+2026-01-21 03:23:26,197 - __main__ - INFO - Trigger write: 7 msgs (Timeout: True, Full: False)
+2026-01-21 03:23:26,203 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:23:26,375 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_23_26_7.json'.
+2026-01-21 03:23:32,575 - __main__ - INFO - 💾 Đã lưu 7 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_23_26_7.json
+2026-01-21 03:24:33,258 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 03:24:33,259 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:24:33,410 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_24_33_8.json'.
+2026-01-21 03:24:40,438 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_24_33_8.json
+2026-01-21 03:25:41,127 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:25:41,128 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:25:41,213 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_25_41_9.json'.
+2026-01-21 03:25:47,196 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_25_41_9.json
+2026-01-21 03:26:48,250 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 03:26:48,251 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:26:48,424 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_26_48_8.json'.
+2026-01-21 03:26:57,264 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_26_48_8.json
+2026-01-21 03:27:57,423 - __main__ - INFO - Trigger write: 9 msgs (Timeout: True, Full: False)
+2026-01-21 03:27:57,423 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:27:57,554 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_27_57_9.json'.
+2026-01-21 03:28:03,664 - __main__ - INFO - 💾 Đã lưu 9 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_27_57_9.json
+2026-01-21 03:28:58,240 - __main__ - INFO - Trigger write: 10 msgs (Timeout: False, Full: True)
+2026-01-21 03:28:58,247 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:28:58,312 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_28_58_10.json'.
+2026-01-21 03:29:04,980 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_28_58_10.json
+2026-01-21 03:30:05,620 - __main__ - INFO - Trigger write: 7 msgs (Timeout: True, Full: False)
+2026-01-21 03:30:05,637 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 03:30:05,907 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_03_30_05_7.json'.
+2026-01-21 03:30:13,777 - __main__ - INFO - 💾 Đã lưu 7 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_03_30_05_7.json
