@@ -1,165 +1,222 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
-import time  # <--- [THÊM] Thư viện để đếm giờ
+import os
+import sys
+
+# Cấu hình PySpark để chạy ngầm trong Streamlit
+# (Cần thiết để load model và connect Cassandra)
+os.environ['HADOOP_HOME'] = "D:\\hadoop"
+sys.path.append("D:\\hadoop\\bin")
+os.environ['JAVA_HOME'] = "C:\\Program Files\\Eclipse Adoptium\\jdk-11.0.29.7-hotspot"
+os.environ['PATH'] = os.environ['JAVA_HOME'] + "\\bin;" + os.environ['PATH']
+
+from pyspark.sql import SparkSession
+from pyspark.ml import PipelineModel
+from pyspark.sql.types import StructType, StructField, StringType, DoubleType, IntegerType
 
 # ==========================================
-# 1. CẤU HÌNH TRANG & CSS
+# 1. SETUP SPARK SESSION (CACHE RESOURCE)
 # ==========================================
-st.set_page_config(
-    page_title="Zillow Analytics Dashboard",
-    page_icon="🏠",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+@st.cache_resource
+def get_spark_session():
+    """Khởi tạo Spark 1 lần duy nhất cho cả app"""
+    return SparkSession.builder \
+    .appName("HanoiHousePrice_Training_Batch") \
+    .master("local[*]") \
+    \
+    .config("spark.driver.host", "127.0.0.1") \
+    .config("spark.driver.bindAddress", "127.0.0.1") \
+    \
+    .config("spark.network.timeout", "300s") \
+    .config("spark.executor.heartbeatInterval", "60s") \
+    \
+    .config("spark.hadoop.fs.defaultFS", "hdfs://localhost:9000") \
+    .config("spark.hadoop.fs.hdfs.impl", "org.apache.hadoop.hdfs.DistributedFileSystem") \
+    .config("spark.hadoop.dfs.client.use.datanode.hostname", "true") \
+    \
+    .config("spark.jars.packages", "com.datastax.spark:spark-cassandra-connector_2.12:3.3.0") \
+    .config("spark.cassandra.connection.host", "localhost") \
+    .config("spark.cassandra.connection.port", "9042") \
+    .getOrCreate()
 
-# Custom CSS
-st.markdown("""
-<style>
-    .big-font { font-size:30px !important; font-weight: bold; color: #1E88E5; }
-    .metric-card { background-color: #f0f2f6; border-radius: 10px; padding: 15px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); }
-    div[data-testid="stMetricValue"] { font-size: 24px; color: #000; }
-</style>
-""", unsafe_allow_html=True)
-
-# ==========================================
-# 2. HÀM LOAD DỮ LIỆU (QUAN TRỌNG NHẤT)
-# ==========================================
-
-# [SỬA 1] Thêm ttl=2: Cache chỉ sống 2 giây. 
-# Sau 2 giây, nếu hàm được gọi lại, nó SẼ ĐỌC LẠI FILE TỪ Ổ CỨNG.
-@st.cache_data(ttl=2) 
-def load_prediction_data():
+@st.cache_resource
+def load_trained_model(_spark):
+    """Load model đã train từ disk"""
     try:
-        df = pd.read_csv("D:/BTL_Big_Data/Big_Data_20251/prediction_results.csv")
-        df['price_Ty'] = df['price'] / 1_000_000_000
-        df['pred_Ty'] = df['prediction'] / 1_000_000_000
-        df['Error'] = df['price_Ty'] - df['pred_Ty']
-        df['Abs_Error'] = df['Error'].abs()
-        return df
-    except FileNotFoundError:
+        model_path = "file:///D:/BTL_Big_Data/model"
+        return PipelineModel.load(model_path)
+    except Exception as e:
         return None
 
-# [SỬA 1] Tương tự với file Recommendation
-@st.cache_data(ttl=2)
-def load_recommendation_data():
+# Khởi tạo
+spark = get_spark_session()
+model = load_trained_model(spark)
+
+# ==========================================
+# 2. HÀM TRUY VẤN DỮ LIỆU
+# ==========================================
+def get_dashboard_stats():
+    """Lấy thống kê tổng hợp từ Cassandra (Bảng data2)"""
     try:
-        df = pd.read_csv("D:/BTL_Big_Data/Big_Data_20251/recommendation_results.csv")
-        return df
-    except FileNotFoundError:
-        return None
-
-# ==========================================
-# 3. SIDEBAR (BỘ LỌC)
-# ==========================================
-st.sidebar.image("spark-logo.jpg", width=150)
-st.sidebar.title("🎛️ Control Panel")
-
-# Hiển thị trạng thái Real-time
-st.sidebar.success("🟢 Real-time Mode: ON")
-st.sidebar.write("Đang tự động cập nhật mỗi 2s...")
-
-df = load_prediction_data()
-
-if df is not None:
-    city_list = ["Tất cả"] + sorted(df['city'].unique().tolist())
-    
-    # Lưu session state để giữ lựa chọn khi refresh trang
-    if 'selected_city' not in st.session_state:
-        st.session_state.selected_city = "Tất cả"
-
-    # Widget selectbox cần có key để giữ trạng thái
-    selected_city = st.sidebar.selectbox(
-        "📍 Chọn Khu vực (Quận/Huyện):", 
-        city_list, 
-        key='city_select_box'
-    )
-    
-    if selected_city != "Tất cả":
-        df_filtered = df[df['city'] == selected_city]
-    else:
-        df_filtered = df
-else:
-    st.error("Đang chờ dữ liệu từ Spark ML...")
-    time.sleep(2)
-    st.rerun()
-    st.stop()
-
-# ==========================================
-# 4. MAIN LAYOUT
-# ==========================================
-st.markdown('<p class="big-font">🏠 HANOI REAL ESTATE AI ANALYTICS</p>', unsafe_allow_html=True)
-st.markdown(f"**Hệ thống:** Spark Streaming + Batch Processing + GBT Regressor | **Khu vực:** {selected_city}")
-
-tab1, tab2 = st.tabs(["📊 Phân tích & Dự báo", "🤖 Hệ thống Gợi ý (AI)"])
-
-# --- TAB 1 ---
-with tab1:
-    col1, col2, col3, col4 = st.columns(4)
-    with col1: st.metric("Tổng số căn tin", f"{len(df_filtered):,}", delta="Samples")
-    with col2: 
-        r2 = 1 - (df_filtered['Error']**2).sum() / ((df_filtered['price_Ty'] - df_filtered['price_Ty'].mean())**2).sum()
-        st.metric("Độ chính xác (R2)", f"{r2:.4f}")
-    with col3: 
-        rmse = (df_filtered['Error']**2).mean() ** 0.5
-        st.metric("RMSE", f"{rmse:.2f} Tỷ")
-    with col4: 
-        mae = df_filtered['Abs_Error'].mean()
-        st.metric("MAE", f"{mae:.2f} Tỷ")
-
-    st.markdown("---")
-    
-    col_chart1, col_chart2 = st.columns([1.5, 1])
-    with col_chart1:
-        fig = px.scatter(
-            df_filtered, x="price_Ty", y="pred_Ty", color="Abs_Error",
-            size="livingarea", hover_data=['city', 'bedrooms'],
-            title=f"Độ chính xác dự báo", color_continuous_scale="RdYlGn_r"
-        )
-        max_val = max(df_filtered['price_Ty'].max(), df_filtered['pred_Ty'].max())
-        fig.add_shape(type="line", x0=0, y0=0, x1=max_val, y1=max_val, line=dict(color="Red", width=2, dash="dash"))
-        st.plotly_chart(fig, use_container_width=True)
-
-    with col_chart2:
-        fig2 = px.histogram(df_filtered, x="Error", nbins=30, title="Phân bố sai số", color_discrete_sequence=['#1E88E5'])
-        fig2.add_vline(x=0, line_dash="dash", line_color="red")
-        st.plotly_chart(fig2, use_container_width=True)
-
-    st.subheader("📋 Dữ liệu chi tiết")
-    st.dataframe(
-        df_filtered.sort_values("Abs_Error").head(10)[['city', 'livingarea', 'bedrooms', 'price_Ty', 'pred_Ty', 'Error']],
-        use_container_width=True
-    )
-
-# --- TAB 2 ---
-with tab2:
-    rec_df = load_recommendation_data()
-    if rec_df is not None:
-        target_house = rec_df.iloc[0]
-        neighbors = rec_df.iloc[1:]
+        # Đọc bảng data2 từ Cassandra
+        df_cass = spark.read \
+            .format("org.apache.spark.sql.cassandra") \
+            .options(table="data2", keyspace="finaldata1") \
+            .load()
         
-        st.info("🤖 AI Recommendation Engine đang chạy...")
-        st.write("#### 🏠 Căn nhà bạn đang xem:")
-        c1, c2, c3, c4 = st.columns(4)
-        c1.metric("Khu vực", target_house['city'])
-        c2.metric("Mức giá", f"{target_house['price']/1e9:,.2f} Tỷ")
-        c3.metric("Diện tích", f"{target_house['livingarea']} m2")
-        c4.metric("Phòng ngủ", f"{int(target_house['bedrooms'])}")
+        # Tạo View để query SQL cho lẹ
+        df_cass.createOrReplaceTempView("houses")
+        
+        # Query thống kê
+        stats = spark.sql("""
+            SELECT 
+                city, 
+                COUNT(*) as count, 
+                AVG(price) as avg_price, 
+                AVG(livingarea) as avg_area,
+                MAX(price) as max_price
+            FROM houses 
+            WHERE city IS NOT NULL 
+            GROUP BY city
+        """).toPandas()
+        
+        return stats
+    except Exception as e:
+        st.error(f"Lỗi đọc Cassandra: {e}")
+        return pd.DataFrame()
 
-        st.write("#### 🔍 Top 5 Căn nhà tương tự:")
-        cols = st.columns(5)
-        for idx, (_, row) in enumerate(neighbors.head(5).iterrows()):
-            with cols[idx]:
-                st.image("https://cdn-icons-png.flaticon.com/512/263/263115.png", width=60)
-                st.markdown(f"**{row['city']}**")
-                st.write(f"💰 {row['price']/1e9:,.2f} Tỷ")
-                st.progress(int(row['Do_Giong_Nhau'])/100, text=f"Giống: {int(row['Do_Giong_Nhau'])}%")
+def predict_custom_house(input_data):
+    """Dự đoán giá cho input nhập tay"""
+    if model is None:
+        return 0.0
+    
+    # Tạo DataFrame từ input dictionary
+    # Cần đúng schema như lúc train
+    schema = StructType([
+        StructField("city", StringType(), True),
+        StructField("homeType", StringType(), True),
+        StructField("newConstructionType", StringType(), True),
+        StructField("lotAreaValue", DoubleType(), True),
+        StructField("bathrooms", DoubleType(), True),
+        StructField("bedrooms", DoubleType(), True),
+        StructField("livingArea", DoubleType(), True),
+        StructField("isFeatured", DoubleType(), True),
+        StructField("isShowcaseListing", DoubleType(), True),
+        StructField("description", StringType(), True) # Để trích xuất NLP features
+        # Các cột NLP sẽ được tạo trong Pipeline (nếu Pipeline bao gồm bước đó)
+        # Lưu ý: Nếu bước tạo cột NLP nằm NGOÀI Pipeline (như trong sparkML.py cũ),
+        # bạn phải tự tạo cột đó ở đây trước khi đưa vào model.transform
+    ])
+    
+    # Ở file sparkML.py mới, tôi đã giả định các bước NLP nằm ngoài Pipeline cho đơn giản.
+    # Nên ở đây ta cần tái tạo logic feature engineering cơ bản
+    rows = [input_data]
+    df_input = spark.createDataFrame(rows) # Schema tự suy diễn hoặc ép kiểu sau
+    
+    # Tái tạo logic NLP cơ bản (giống sparkML.py)
+    from pyspark.sql.functions import lit, col, lower, when
+    df_processed = df_input \
+        .withColumn("desc_lower", lower(col("description"))) \
+        .withColumn("has_red_book", when(col("desc_lower").rlike("sổ đỏ|sổ hồng"), 1.0).otherwise(0.0)) \
+        .withColumn("is_street_front", when(col("desc_lower").rlike("mặt tiền|kinh doanh"), 1.0).otherwise(0.0)) \
+        .withColumn("is_wide_alley", when(col("desc_lower").rlike("xe hơi|oto"), 1.0).otherwise(0.0)) \
+        .withColumn("isFeatured", lit(0.0)) \
+        .withColumn("isShowcaseListing", lit(0.0))
+        
+    # Ép kiểu cho khớp model
+    numeric_cols = ['lotAreaValue', 'bathrooms', 'bedrooms', 'livingArea']
+    for c in numeric_cols:
+        df_processed = df_processed.withColumn(c, col(c).cast(DoubleType()))
+
+    # Dự đoán
+    prediction = model.transform(df_processed)
+    return prediction.select("prediction").collect()[0][0]
+
+# ==========================================
+# 3. GIAO DIỆN STREAMLIT
+# ==========================================
+st.set_page_config(page_title="Real Estate AI Dashboard", layout="wide")
+
+st.title("🏙️ Real Estate AI Analytics Center")
+st.markdown("---")
+
+# --- PHẦN 1: THỐNG KÊ TỔNG HỢP (READ CASSANDRA) ---
+st.header("1. Thị trường Tổng quan")
+if st.button("🔄 Cập nhật dữ liệu"):
+    st.cache_data.clear()
+
+stats_df = get_dashboard_stats()
+
+if not stats_df.empty:
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Tổng số tin đăng", f"{stats_df['count'].sum():,}")
+    col1.metric("Giá trung bình toàn thị trường", f"{stats_df['avg_price'].mean()/1e9:,.2f} Tỷ")
+    
+    # Biểu đồ giá theo thành phố
+    fig = px.bar(stats_df, x='city', y='avg_price', 
+                 title="Giá trung bình theo Quận/Huyện",
+                 color='count', labels={'avg_price': 'Giá TB (VNĐ)'})
+    st.plotly_chart(fig, use_container_width=True)
+else:
+    st.warning("Chưa có dữ liệu trong Cassandra.")
+
+st.markdown("---")
+
+# --- PHẦN 2: DỰ ĐOÁN GIÁ (INPUT FORM) ---
+st.header("2. Định giá Nhà (AI Prediction)")
+
+c1, c2, c3 = st.columns(3)
+with c1:
+    inp_city = st.selectbox("Quận/Huyện", ["Hà Đông", "Cầu Giấy", "Đống Đa", "Thanh Xuân", "Hoàng Mai"])
+    inp_area = st.number_input("Diện tích (m2)", min_value=10.0, value=50.0)
+with c2:
+    inp_bed = st.number_input("Số phòng ngủ", 1, 10, 2)
+    inp_bath = st.number_input("Số phòng tắm", 1, 10, 2)
+with c3:
+    inp_desc = st.text_area("Mô tả (Ví dụ: Nhà mặt tiền, có sổ đỏ)", "Nhà có sổ đỏ, ngõ xe hơi")
+
+if st.button("🔮 Dự đoán giá ngay"):
+    if model:
+        with st.spinner("AI đang tính toán..."):
+            input_data = {
+                "city": inp_city,
+                "homeType": "UNKNOWN", # Giá trị mặc định
+                "newConstructionType": "UNKNOWN",
+                "lotAreaValue": inp_area,
+                "livingArea": inp_area,
+                "bathrooms": inp_bath,
+                "bedrooms": inp_bed,
+                "description": inp_desc
+            }
+            pred_price = predict_custom_house(input_data)
+            st.success(f"💰 Giá dự đoán: **{pred_price/1e9:,.2f} Tỷ VNĐ**")
     else:
-        st.warning("Đang chờ dữ liệu gợi ý...")
+        st.error("Chưa load được Model. Hãy chạy file sparkML.py để train trước!")
 
-# ==========================================
-# [SỬA 2] CƠ CHẾ TỰ ĐỘNG REFRESH
-# ==========================================
-time.sleep(2) # Nghỉ 2 giây
-st.rerun()    # Ra lệnh cho Streamlit chạy lại từ đầu
+# --- PHẦN 3: XEM GỢI Ý (READ CASSANDRA RECOMMENDATIONS) ---
+st.markdown("---")
+st.header("3. Gợi ý Nhà Tương tự")
+
+# Nhập ID căn nhà muốn xem (trong thực tế sẽ click từ danh sách)
+target_id = st.text_input("Nhập mã căn nhà (ZPID) để xem gợi ý:", "")
+
+if target_id:
+    # Query bảng recommendations từ Cassandra
+    try:
+        rec_df_spark = spark.read \
+            .format("org.apache.spark.sql.cassandra") \
+            .options(table="recommendations", keyspace="finaldata1") \
+            .load() \
+            .filter(f"source_id = '{target_id}'")
+        
+        recs = rec_df_spark.toPandas()
+        
+        if not recs.empty:
+            st.write(f"Tìm thấy {len(recs)} căn tương tự:")
+            st.dataframe(recs[['target_id', 'city', 'price', 'livingarea', 'distance']])
+        else:
+            st.info("Không tìm thấy gợi ý cho căn này (Có thể do chưa chạy Batch Job).")
+            
+    except Exception as e:
+        st.error(f"Lỗi truy vấn gợi ý: {e}")

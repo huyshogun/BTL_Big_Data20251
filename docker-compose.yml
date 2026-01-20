@@ -70,7 +70,8 @@ services:
     container_name: namenode
     hostname: namenode
     ports:
-      - 9870:9870
+      - "9870:9870"
+      - "9000:9000" # Mở thêm port RPC cho Spark kết nối
     environment:
       - CLUSTER_NAME=stock
     env_file:
@@ -88,9 +89,10 @@ services:
   datanode-1:
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
     container_name: datanode-1
-    hostname: localhost
+    hostname: datanode-1                # <- đổi từ localhost
     ports:
-      - 9864:9864
+      - "9864:9864"
+      - "9866:9866"                    # <- expose port 9866
     environment:
       - SERVICE_PRECONDITION=namenode:9870
     env_file:
@@ -100,7 +102,7 @@ services:
       restart_policy:
         condition: on-failure
     volumes:
-    - ../storage/hadoop/datanode-1:/hadoop/dfs/data
+      - ../storage/hadoop/datanode-1:/hadoop/dfs/data
     networks:
       - es-net
 
