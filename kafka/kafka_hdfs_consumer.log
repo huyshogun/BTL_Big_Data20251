@@ -4091,3 +4091,42 @@ requests.exceptions.ConnectionError: HTTPConnectionPool(host='datanode-1', port=
 2026-01-21 01:40:57,380 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=localhost:9097 <connected> [IPv6 ('::1', 9097, 0, 0)]>: Closing connection. 
 2026-01-21 01:40:57,391 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=1 host=localhost:9097 <connected> [IPv6 ('::1', 9097, 0, 0)]>: Closing connection. 
 2026-01-21 01:40:57,393 - __main__ - INFO - Consumer closed.
+2026-01-21 01:54:21,055 - __main__ - INFO - 🚀 Khởi động Consumer... Batch Size: 10
+2026-01-21 01:54:21,084 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-1 host=localhost:9099 <connecting> [IPv6 ('::1', 9099, 0, 0)]>: connecting to localhost:9099 [('::1', 9099, 0, 0) IPv6]
+2026-01-21 01:54:21,159 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-1 host=localhost:9099 <checking_api_versions_recv> [IPv6 ('::1', 9099, 0, 0)]>: Broker version identified as 2.6
+2026-01-21 01:54:21,159 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-1 host=localhost:9099 <connected> [IPv6 ('::1', 9099, 0, 0)]>: Connection complete.
+2026-01-21 01:54:21,161 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('example_topic',)
+2026-01-21 01:54:21,162 - hdfs.client - INFO - Instantiated <InsecureClient(url='http://localhost:9870')>.
+2026-01-21 01:54:21,162 - hdfs.client - INFO - Fetching content summary for '/'.
+2026-01-21 01:54:21,248 - __main__ - INFO - ✅ Kết nối HDFS thành công tại: http://localhost:9870
+2026-01-21 01:54:21,267 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=3 host=localhost:9099 <connecting> [IPv6 ('::1', 9099, 0, 0)]>: connecting to localhost:9099 [('::1', 9099, 0, 0) IPv6]
+2026-01-21 01:54:21,267 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=3 host=localhost:9099 <connected> [IPv6 ('::1', 9099, 0, 0)]>: Connection complete.
+2026-01-21 01:54:21,269 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-1 host=localhost:9099 <connected> [IPv6 ('::1', 9099, 0, 0)]>: Closing connection. 
+2026-01-21 01:54:21,413 - kafka.cluster - INFO - Coordinator for group/hdfs_archiver_group is BrokerMetadata(nodeId='coordinator-1', host='localhost', port=9097, rack=None)
+2026-01-21 01:54:21,413 - kafka.coordinator - INFO - Discovered coordinator coordinator-1 for group hdfs_archiver_group
+2026-01-21 01:54:21,414 - kafka.coordinator.heartbeat - INFO - Starting new heartbeat thread
+2026-01-21 01:54:21,415 - kafka.coordinator.consumer - INFO - Revoking previously assigned partitions set() for group hdfs_archiver_group
+2026-01-21 01:54:21,416 - kafka.coordinator - INFO - Failed to join group hdfs_archiver_group: NodeNotReadyError: coordinator-1
+2026-01-21 01:54:21,418 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=localhost:9097 <connecting> [IPv6 ('::1', 9097, 0, 0)]>: connecting to localhost:9097 [('::1', 9097, 0, 0) IPv6]
+2026-01-21 01:54:21,419 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=coordinator-1 host=localhost:9097 <connected> [IPv6 ('::1', 9097, 0, 0)]>: Connection complete.
+2026-01-21 01:54:21,522 - kafka.coordinator - INFO - (Re-)joining group hdfs_archiver_group
+2026-01-21 01:54:21,551 - kafka.coordinator - INFO - Received member id kafka-python-2.3.0-4b2a6a80-fbc8-4246-aa96-28b5cc070031 for group hdfs_archiver_group; will retry join-group
+2026-01-21 01:54:21,551 - kafka.coordinator - INFO - Failed to join group hdfs_archiver_group: [Error 79] MemberIdRequiredError
+2026-01-21 01:54:21,552 - kafka.coordinator - INFO - (Re-)joining group hdfs_archiver_group
+2026-01-21 01:54:24,920 - kafka.coordinator - INFO - Successfully joined group hdfs_archiver_group <Generation 27 (member_id: kafka-python-2.3.0-4b2a6a80-fbc8-4246-aa96-28b5cc070031, protocol: range)>
+2026-01-21 01:54:24,923 - kafka.coordinator - INFO - Elected group leader -- performing partition assignments using range
+2026-01-21 01:54:24,984 - kafka.consumer.subscription_state - INFO - Updated partition assignment: [TopicPartition(topic='example_topic', partition=0)]
+2026-01-21 01:54:24,985 - kafka.coordinator.consumer - INFO - Setting newly assigned partitions {TopicPartition(topic='example_topic', partition=0)} for group hdfs_archiver_group
+2026-01-21 01:54:25,009 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=2 host=localhost:9098 <connecting> [IPv6 ('::1', 9098, 0, 0)]>: connecting to localhost:9098 [('::1', 9098, 0, 0) IPv6]
+2026-01-21 01:54:25,013 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=2 host=localhost:9098 <connected> [IPv6 ('::1', 9098, 0, 0)]>: Connection complete.
+2026-01-21 01:54:25,051 - __main__ - INFO - Trigger write: 10 msgs (Timeout: False, Full: True)
+2026-01-21 01:54:25,052 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 01:54:25,092 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_01_54_25_10.json'.
+2026-01-21 01:54:26,153 - __main__ - INFO - 💾 Đã lưu 10 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_01_54_25_10.json
+2026-01-21 01:55:32,999 - __main__ - INFO - Trigger write: 8 msgs (Timeout: True, Full: False)
+2026-01-21 01:55:33,008 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 01:55:33,107 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_01_55_33_8.json'.
+2026-01-21 01:55:38,831 - __main__ - INFO - 💾 Đã lưu 8 tin vào HDFS: /data/kafka_messages/2026/01/21/batdongsan_01_55_33_8.json
+2026-01-21 01:56:39,008 - __main__ - INFO - Trigger write: 10 msgs (Timeout: True, Full: True)
+2026-01-21 01:56:39,010 - hdfs.client - INFO - Fetching status for '/data/kafka_messages/2026/01/21'.
+2026-01-21 01:56:39,201 - hdfs.client - INFO - Writing to '/data/kafka_messages/2026/01/21/batdongsan_01_56_39_10.json'.

@@ -10,7 +10,7 @@ from kafka import KafkaConsumer
 # ==========================================
 KAFKA_TOPIC = "example_topic"
 BOOTSTRAP_SERVERS = ['localhost:9097', 'localhost:9098', 'localhost:9099']
-BATCH_SIZE = 10  # Số lượng bản ghi để kích hoạt training (Bạn có thể đổi thành 100, 1000)
+BATCH_SIZE = 50  # Số lượng bản ghi để kích hoạt training (Bạn có thể đổi thành 100, 1000)
 SPARK_ML_FILE = "sparkML.py" # Tên file ML cần chạy
 
 # Đảm bảo đường dẫn Python đúng (tránh lỗi không tìm thấy thư viện)
@@ -23,8 +23,8 @@ def run_spark_ml_job():
     
     # Chờ 5 giây để đảm bảo dữ liệu từ Kafka kịp trôi vào Cassandra
     # (Vì Spark Streaming cần vài giây để xử lý và ghi xuống DB)
-    print("⏳ Đang đợi 5s để dữ liệu đồng bộ xuống Cassandra...")
-    time.sleep(5)
+    print("⏳ Đang đợi 20s để dữ liệu đồng bộ xuống Cassandra...")
+    time.sleep(20)
     
     try:
         # Gọi lệnh chạy file sparkML.py
